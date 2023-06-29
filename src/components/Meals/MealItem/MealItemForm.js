@@ -1,11 +1,12 @@
 import Input from "../../UI/Input";
+import CartContext from "../../../store/cart-context";
 import classes from "./MealItemForm.module.css";
 const MealItemForm = props => {
 	const onSubmit = event => {
 		event.preventDefault();
 	};
 	return (
-		<form className={classes.form} onSubmit={onSubmit}>
+		<form className={classes.form}>
 			<Input
 				label='Amount'
 				input={{

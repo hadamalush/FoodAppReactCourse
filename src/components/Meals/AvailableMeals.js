@@ -5,8 +5,8 @@ import Card from "../UI/Card";
 const DUMMY_MEALS = [
 	{
 		id: "m1",
-		name: "Sushi",
-		description: "Finest fish and veggies",
+		name: "Sushi ",
+		description: "Japanesse Specific",
 		price: 22.99,
 	},
 	{
