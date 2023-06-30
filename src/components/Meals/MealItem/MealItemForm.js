@@ -1,6 +1,6 @@
 import Input from "../../UI/Input";
 import CartContext from "../../../store/cart-context";
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import classes from "./MealItemForm.module.css";
 
 const MealItemForm = props => {
@@ -10,17 +10,18 @@ const MealItemForm = props => {
 		setAmountMeals(event.target.value);
 	};
 
-	const onSubmit = event => {
+	const submitHandler = event => {
 		event.preventDefault();
 		const item = {
 			id: props.id,
 			name: props.name,
-			price: props.price * amountMeals,
+			price: +props.price,
+			amount: +amountMeals,
 		};
 		cc.addItem(item);
 	};
 	return (
-		<form className={classes.form} onSubmit={onSubmit}>
+		<form className={classes.form} onSubmit={submitHandler}>
 			<Input
 				label='Amount'
 				input={{
